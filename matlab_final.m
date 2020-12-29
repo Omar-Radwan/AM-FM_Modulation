@@ -5,6 +5,7 @@ clear all
 %-------------------------------------------------read file--------------------------------------------------------------------
 FILE = 'eric.wav';
 f_c = 100000;
+f_s_resampled = 5*f_c;
 [y_t, f_s]= audioread(FILE);
 %-------------------------------------------------message in frequency domain--------------------------------------------------------------------
 y_f = fftshift(fft(y_t));
@@ -25,8 +26,7 @@ y_t_filtered= real(ifft(ifftshift(y_f_filtered)));
 x_t = linspace(0,length(y_t_filtered)/f_s, length(y_t_filtered));
 %plot_signal(x_t, y_t_filtered, 'Filtered message in time domain','Time','Value'); 
 %-------------------------------------------------resmple--------------------------------------------------------------------
-y_t_resampled = resample(y_t_filtered,5*f_c,f_s);
-f_s_resampled = 5*f_c;
+y_t_resampled = resample(y_t_filtered,f_s_resampled,f_s);
 %-------------------------------------------------carrier signal--------------------------------------------------------------------
 t = linspace(0, (length(y_t_resampled)-1)/f_s_resampled, length(y_t_resampled)); %(x2-x1)/(n-1) = 1/5*fc
 carrier = cos(2*pi*f_c*t).';
