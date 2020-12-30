@@ -1,7 +1,8 @@
-function filter = generate_filter(len,x_axis,f_filter)
-    filter = ones(len,1);
-    for i = 1: len
-        if x_axis(i)<-f_filter || x_axis(i)>f_filter
+function filter = generate_filter(signal_length,fs,f_filter)
+    filter = ones(signal_length,1);
+    f = linspace(-fs/2,fs/2,signal_length);
+    for i = 1: signal_length
+        if f(i)<-f_filter || f(i)>f_filter
             filter(i)=0;
         end
     end
