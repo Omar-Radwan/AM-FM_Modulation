@@ -1,5 +1,5 @@
 # AM-FM Modulation
-Amplitude modulation/demodulation and frequency modulation/demodulation of voice signal 
+Amplitude modulation/demodulation and frequency modulation/demodulation of voice signal using MATLAB 
 ## AM Modulation/Demodulation
 ![](./readme-assets/am-modulation/00.png)
 ![](./readme-assets/am-modulation/01.png)
