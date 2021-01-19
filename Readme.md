@@ -1,6 +1,6 @@
 # AM-FM Modulation
 Amplitude modulation/demodulation and frequency modulation/demodulation of voice signal 
-## AM Modulation\Demodulation
+## AM Modulation/Demodulation
 ![](./readme-assets/am-modulation/00.png)
 ![](./readme-assets/am-modulation/01.png)
 ![](./readme-assets/am-modulation/02.png)
@@ -33,7 +33,7 @@ Amplitude modulation/demodulation and frequency modulation/demodulation of voice
 ![](./readme-assets/am-modulation/29.png)
 ![](./readme-assets/am-modulation/30.png)
                       
-##NB./FM Modulation/Demodulation
+##FM Modulation/Demodulation
 ![](./readme-assets/fm-modulation/00.png)
 ![](./readme-assets/fm-modulation/01.png)
 ![](./readme-assets/fm-modulation/02.png)
