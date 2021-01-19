@@ -20,7 +20,7 @@ modulation_index = 0.5;
 max_amp = max(abs(yt));
 f_filter = 4000;
 %-------------------------------------------------plotting--------------------------------------------------------------------
-%plot_in_time(yt,fs,'Signal in time domain');
+plot_in_time(yt,fs,'Signal in time domain');
 %-------------------------------------------------message in frequency domain--------------------------------------------------------------------
 yf = fftshift(fft(yt));
 %-------------------------------------------------plotting--------------------------------------------------------------------
@@ -29,8 +29,8 @@ plot_in_frequency(real(yf),fs,'Signal in frequency domain');
 filter = generate_filter(length(yf),fs,f_filter);
 yf_filtered = filter.*yf;
 %-------------------------------------------------plotting--------------------------------------------------------------------
-%plot_in_frequency(real(filter),fs,'Filter');
-%plot_in_frequency(real(yf_filtered),fs,'Filtered message in frequency domain');
+plot_in_frequency(real(filter),fs,'Filter');
+plot_in_frequency(real(yf_filtered),fs,'Filtered message in frequency domain');
 
 %-------------------------------------------------back to time domain--------------------------------------------------------------------
 yt_filtered= real(ifft(ifftshift(yf_filtered)));
@@ -57,7 +57,7 @@ yf_sc = fftshift(fft(yt_sc));
 
 
 %-------------------------------------------------plotting--------------------------------------------------------------------
-%plot_in_time(yt_sc,fs_res,'DSBSC modulated signal in time domain');
+plot_in_time(yt_sc,fs_res,'DSBSC modulated signal in time domain');
 plot_in_frequency(real(yf_sc),fs_res,'DSBSC modulated signal in frequency domain');
 
 %-------------------------------------------------DSBTC modulation--------------------------------------------------------------------
@@ -66,7 +66,7 @@ A = 2*max_message;
 yt_tc = (A+yt_resampled).*carrier_t;
 yf_tc = fftshift(fft(yt_tc));
 %-------------------------------------------------plotting--------------------------------------------------------------------
-%plot_in_time(yt_tc,fs_res,'DSBTC modulated signal in time domain');
+plot_in_time(yt_tc,fs_res,'DSBTC modulated signal in time domain');
 plot_in_frequency(real(yf_tc),fs_res,'DSBTC modulated signal in frequency domain');
 %sound(yt_tc,fs);
 
@@ -75,7 +75,7 @@ plot_in_frequency(real(yf_tc),fs_res,'DSBTC modulated signal in frequency domain
 [yt_sc_env, yf_sc_env] = env_demod(yt_sc,fs_res,fs,0,0);
 %-------------------------------------------------plotting--------------------------------------------------------------------
 plot_in_time(yt_sc_env, fs, 'DSBSC demodulated signal in time domain using envelope detector');
-%plot_in_frequency(real(yf_sc_env), fs, 'DSBSC demodulated signal in frequency domain using envelope detector');
+plot_in_frequency(real(yf_sc_env), fs, 'DSBSC demodulated signal in frequency domain using envelope detector');
 %-------------------------------------------------sound--------------------------------------------------------------------
 %sound(yt_sc_env,fs); %should not be good
 
@@ -87,7 +87,7 @@ plot_in_time(yt_sc_env, fs, 'DSBSC demodulated signal in time domain using envel
 [yt_tc_env, yf_tc_env] = env_demod(yt_tc,fs_res,fs,0,0);
 %-------------------------------------------------plotting--------------------------------------------------------------------
 plot_in_time(yt_tc_env, fs, 'DSBTC demodulated signal no snr, in time domain using envelope detector');
-%plot_in_frequency(real(yf_tc_env), fs, 'DSBTC demodulated signal no snr in frequency domain using envelope detector');
+plot_in_frequency(real(yf_tc_env), fs, 'DSBTC demodulated signal no snr in frequency domain using envelope detector');
 %-------------------------------------------------sound--------------------------------------------------------------------
 %sound(yt_tc_env,fs); %should be good
 
@@ -96,7 +96,7 @@ plot_in_time(yt_tc_env, fs, 'DSBTC demodulated signal no snr, in time domain usi
 [yt_tc_env, yf_tc_env] = env_demod(yt_tc,fs_res,fs,1,0);
 %-------------------------------------------------plotting--------------------------------------------------------------------
 plot_in_time(yt_tc_env, fs, 'DSBTC demodulated signal snr=0, in time domain using envelope detector');
-%plot_in_frequency(real(yf_tc_env), fs, 'DSBTC demodulated signal snr=0, in frequency domain using envelope detector');
+plot_in_frequency(real(yf_tc_env), fs, 'DSBTC demodulated signal snr=0, in frequency domain using envelope detector');
 %-------------------------------------------------sound--------------------------------------------------------------------
 %sound(yt_tc_env,fs); 
 
@@ -105,7 +105,7 @@ plot_in_time(yt_tc_env, fs, 'DSBTC demodulated signal snr=0, in time domain usin
 [yt_tc_env, yf_tc_env] = env_demod(yt_tc,fs_res,fs,1,10);
 %-------------------------------------------------plotting--------------------------------------------------------------------
 plot_in_time(yt_tc_env, fs, 'DSBTC demodulated signal snr=10, in time domain using envelope detector');
-%plot_in_frequency(real(yf_tc_env), fs, 'DSBTC demodulated signal snr=10, in frequency domain using envelope detector');
+plot_in_frequency(real(yf_tc_env), fs, 'DSBTC demodulated signal snr=10, in frequency domain using envelope detector');
 %-------------------------------------------------sound--------------------------------------------------------------------
 %sound(yt_tc_env,fs); 
 
@@ -113,7 +113,7 @@ plot_in_time(yt_tc_env, fs, 'DSBTC demodulated signal snr=10, in time domain usi
 [yt_tc_env, yf_tc_env] = env_demod(yt_tc,fs_res,fs,1,30);
 %-------------------------------------------------plotting--------------------------------------------------------------------
 plot_in_time(yt_tc_env, fs, 'DSBTC demodulated signal snr=30, in time domain using envelope detector');
-%plot_in_frequency(real(yf_tc_env), fs, 'DSBTC demodulated signal snr=30, in frequency domain using envelope detector');
+plot_in_frequency(real(yf_tc_env), fs, 'DSBTC demodulated signal snr=30, in frequency domain using envelope detector');
 %-------------------------------------------------sound--------------------------------------------------------------------
 %sound(yt_tc_env,fs); 
 %#################################################################################################################################################################
